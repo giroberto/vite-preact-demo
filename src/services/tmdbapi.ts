@@ -1,5 +1,5 @@
 import axios from 'axios';
-import config from '../../env';
+import config from '../../environment';
 
 
 const tmdbApi = axios.create({
