@@ -1,20 +1,25 @@
 import { h, render, FunctionalComponent } from 'preact';
 import { Router, Route, RouterOnChangeArgs } from "preact-router";
+import NavigationBar from "./src/components/NavigationBar";
+import ShowMovies from './src/pages/ShowMovies';
 
-const App = () => {
+const App= () => {
   let currentUrl: string;
   const handleRoute = (e: RouterOnChangeArgs) => {
     currentUrl = e.url;
-};
+  };
 
-  return (<Router onChange={handleRoute}>
-    <div path="/">
-      <div onClick={() => window.location.href='2'}>Tchay2</div>
+  return (
+    <div>
+      <NavigationBar />
+      <Router onChange={handleRoute}>
+        <Route path="/" component={ShowMovies}/>
+        <div path="/2">
+          <div onClick={() => (window.location.href = "/")}>Tchay2</div>
+        </div>
+      </Router>
     </div>
-    <div path="/2">
-      <div>Tchay</div>
-    </div>    
-  </Router>);
+  );
 };
 
-render(App(), document.getElementById('app'));
+render(App(), document.getElementById("app"));

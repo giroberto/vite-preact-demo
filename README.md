@@ -17,6 +17,9 @@ Just yarn or npm install
 * [Preact](https://preactjs.com/) - Alternative react implementation
 * [Tailwind](https://tailwindcss.com/) - Css framework
 
+## Setup
+You should copy or rename environment.ts.example to environment.ts and set your api keys from https://themoviedb.org
+
 ## Authors
 
 * **Umberto Barros** - *Initial work* - [giroberto](https://github.com/giroberto)

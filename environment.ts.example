@@ -1,0 +1,15 @@
+interface Config {
+  TMDB_BASE_URL: string;
+  TMDB_IMAGE_URL: string;
+  TMDB_KEY: string;
+  TMDB_TOKEN: string;
+}
+
+const config: Config = {
+  TMDB_BASE_URL: "https://api.themoviedb.org/3/",
+  TMDB_IMAGE_URL: "https://image.tmdb.org/t/p/",
+  TMDB_KEY: "",
+  TMDB_TOKEN: "",
+};
+
+export default config;
