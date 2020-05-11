@@ -18,7 +18,7 @@ const MovieCard: FunctionalComponent<{
   return (
     <Fragment>
       <div class="mt-8">
-        <Link href={`movie/${movie.id}`}>
+        <Link href={`/movie/${movie.id}`}>
           <img
             src={`${config.TMDB_IMAGE_URL}/w185/${movie.poster_path}`}
             alt="poster"

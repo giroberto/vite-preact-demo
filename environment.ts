@@ -7,8 +7,9 @@ interface Config {
   TMDB_TOKEN: string;
 }
 
-const key = process.env.TMDB_KEY as string || devConfig.TMDB_KEY
-const token = process.env.TMDB_TOKEN as string || devConfig.TMDB_TOKEN
+
+const key = devConfig.TMDB_KEY
+const token = devConfig.TMDB_TOKEN
 
 const config: Config = {
   TMDB_BASE_URL: "https://api.themoviedb.org/3/",

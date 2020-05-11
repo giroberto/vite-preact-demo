@@ -1,8 +1,9 @@
-import { h, render, Fragment } from "preact";
+import { h, render } from "preact";
 import { Router, Route, RouterOnChangeArgs } from "preact-router";
 import NavigationBar from "./src/components/NavigationBar";
 import ShowMovies from "./src/pages/ShowMovies";
 import ShowMovie from "./src/pages/ShowMovie";
+import './styles.css'
 
 const App = () => {
   let currentUrl: string;

@@ -1,5 +1,7 @@
 import { FunctionalComponent, h } from "preact";
 
+import Avatar from '../../assets/img/avatar.jpg';
+
 const NavigationBar: FunctionalComponent = () => {
   return (
     <nav class="border-b border-gray-800">
@@ -35,7 +37,7 @@ const NavigationBar: FunctionalComponent = () => {
           <div class="md:ml-4 mt-3 md:mt-0">
             <a href="#">
               <img
-                src="../assets/img/avatar.jpg"
+                src={Avatar}
                 alt="avatar"
                 class="rounded-full w-8 h-8"
               />
