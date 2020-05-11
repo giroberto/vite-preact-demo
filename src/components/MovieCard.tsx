@@ -1,4 +1,4 @@
-import { h, FunctionalComponent, Fragment } from "preact";
+import { FunctionalComponent } from "preact";
 import { Link } from 'preact-router';
 import { Movie } from "../interfaces/MovieInterface";
 import { Genre } from "../interfaces/GenreInterface";

@@ -1,4 +1,4 @@
-import { h, render } from "preact";
+import { render } from "preact";
 import { Router, Route, RouterOnChangeArgs } from "preact-router";
 import NavigationBar from "./src/components/NavigationBar";
 import ShowMovies from "./src/pages/ShowMovies";

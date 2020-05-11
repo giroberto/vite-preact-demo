@@ -1,4 +1,4 @@
-import { h, FunctionalComponent } from "preact";
+import { FunctionalComponent } from "preact";
 import { useState, useEffect } from "preact/hooks";
 import tmdbApi from "../services/tmdbapi";
 import MovieCard from "../components/MovieCard";

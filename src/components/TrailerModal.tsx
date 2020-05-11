@@ -1,4 +1,4 @@
-import { h, FunctionalComponent } from "preact";
+import { FunctionalComponent } from "preact";
 import { Movie } from "../interfaces/MovieInterface";
 
 const TrailerModal: FunctionalComponent<{
