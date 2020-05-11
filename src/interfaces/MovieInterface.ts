@@ -18,6 +18,7 @@ export interface Movie {
   credits: { crew: Array<Crew>; cast: Array<Cast> };
   genre_ids: Array<number>;
   genres: Array<string>;
+  images: {backdrops: Array<any>};
   vote_average: string;
   release_date: string;
   poster_path: string;
