@@ -1,9 +1,10 @@
-import { h, render, FunctionalComponent } from 'preact';
+import { h, render, Fragment } from "preact";
 import { Router, Route, RouterOnChangeArgs } from "preact-router";
 import NavigationBar from "./src/components/NavigationBar";
-import ShowMovies from './src/pages/ShowMovies';
+import ShowMovies from "./src/pages/ShowMovies";
+import ShowMovie from "./src/pages/ShowMovie";
 
-const App= () => {
+const App = () => {
   let currentUrl: string;
   const handleRoute = (e: RouterOnChangeArgs) => {
     currentUrl = e.url;
@@ -13,13 +14,11 @@ const App= () => {
     <div>
       <NavigationBar />
       <Router onChange={handleRoute}>
-        <Route path="/" component={ShowMovies}/>
-        <div path="/2">
-          <div onClick={() => (window.location.href = "/")}>Tchay2</div>
-        </div>
+        <Route path="/" component={ShowMovies} />
+        <Route path="/movie/:id" component={ShowMovie} />
       </Router>
     </div>
   );
 };
 
-render(App(), document.getElementById("app"));
+render(App(), document.body);
