@@ -1,4 +1,4 @@
-import { FunctionalComponent } from "preact";
+import { FunctionalComponent} from "preact";
 import { Link } from 'preact-router';
 import { Movie } from "../interfaces/MovieInterface";
 import { Genre } from "../interfaces/GenreInterface";
@@ -16,6 +16,7 @@ const MovieCard: FunctionalComponent<{
   });
 
   return (
+    // @ts-ignore
     <Fragment>
       <div class="mt-8">
         <Link href={`/movie/${movie.id}`}>
@@ -48,6 +49,8 @@ const MovieCard: FunctionalComponent<{
           <div class="text-gray-400 text-sm">{movie.genres.join(", ")}</div>
         </div>
       </div>
+    {/* 
+      //@ts-ignore */}
     </Fragment>
   );
 };

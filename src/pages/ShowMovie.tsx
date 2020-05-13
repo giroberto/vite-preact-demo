@@ -38,6 +38,7 @@ const ShowMovie: FunctionalComponent<{ id: number }> = ({ id }) => {
   }
 
   return (
+    // @ts-ignore
     <Fragment>
       <div class="movie-info border-b border-gray-800">
         <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row">
@@ -103,15 +104,11 @@ const ShowMovie: FunctionalComponent<{ id: number }> = ({ id }) => {
         </div>
       </div>
 
-      {/* @endif */}
-
-      {/* <!-- end movie-info */}
       <div class="movie-cast border-b border-gray-800">
         <div class="container mx-auto px-4 py-16">
           <h2 class="text-4xl font-semibold">Cast</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {movie.credits.cast.slice(0, 5).map((cast) => {
-              // @foreach (movie.cast as $cast)
               return (
                 <div class="mt-8">
                   <a href={`/actor/${cast.id}`}>
@@ -132,12 +129,10 @@ const ShowMovie: FunctionalComponent<{ id: number }> = ({ id }) => {
                   </div>
                 </div>
               );
-              // @endforeach
             })}
           </div>
         </div>
       </div>
-      {/* <!-- end movie-cast --> */}
 
       <div class="movie-images" x-data="{ isOpen: false, image: ''}">
         <div class="container mx-auto px-4 py-16">
@@ -145,16 +140,9 @@ const ShowMovie: FunctionalComponent<{ id: number }> = ({ id }) => {
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {movie.images.backdrops.slice(0, 9).map((image) => (
               <div class="mt-8">
-                <div
-                  onClick={handleShowBackdrop}
-                  // @click.prevent="
-                  //     isOpen = true
-                  //     image='{{ 'https://image.tmdb.org/t/p/original/'.$image['file_path'] }}'
-                  // "
-                >
+                <div onClick={handleShowBackdrop}>
                   <img
                     src={`${config.TMDB_IMAGE_URL}/w500/${image.file_path}`}
-                    // src="{{ 'https://image.tmdb.org/t/p/w500/'.$image['file_path'] }}"
                     alt="image1"
                     class="hover:opacity-75 transition ease-in-out duration-150"
                   />
@@ -188,7 +176,8 @@ const ShowMovie: FunctionalComponent<{ id: number }> = ({ id }) => {
           )}
         </div>
       </div>
-      {/* <!-- end movie-images --> */}
+      {/* 
+      //@ts-ignore */}
     </Fragment>
   );
 };
