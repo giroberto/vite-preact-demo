@@ -6,11 +6,17 @@
     "build": "vite build --jsx preact"
   },
   "dependencies": {
+    "eslint": "^7.0.0",
     "preact": "^10.4.1",
     "preact-router": "^3.2.1",
     "tailwindcss": "^1.4.6"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "eslint-config-preact": "^1.1.1",
+    "eslint-plugin-react": "^7.20.0",
+    "typescript": "^3.9.2",
     "vite": "^0.14.3"
   }
 }
