@@ -4,13 +4,13 @@ import tmdbApi from "../services/tmdbapi";
 import { Actor } from "../interfaces/ActorInterface";
 import config from "../../environment";
 
-const ShowActor: FunctionalComponent<{ id: number }> = ({ id }) => {
+const ShowActor: FunctionalComponent<{ id: number }> = ({ id }: {id}) => {
   const [actor, setActor] = useState<Actor | null>(null);
   const [social, setSocial] = useState(null);
   const [credits, setCredits] = useState(null);
 
   useEffect(() => {
-    const loadActor = async () => {
+    const loadActor = async (): void => {
       const [actorRes, socialRes, creditsRes] = await Promise.all([
         tmdbApi.get(`/person/${id}`),
         tmdbApi.get(`/person/${id}/external_ids`),
@@ -28,13 +28,9 @@ const ShowActor: FunctionalComponent<{ id: number }> = ({ id }) => {
     return <div>No actor Found</div>;
   }
 
-  function calculateAge(date) {
-    console.log(date)
-    const birthday = new Date(Date.parse(`${date}T00:00:00`));
-    console.log(birthday);
-    const ageDifMs = Date.now() - birthday.getTime();
-    const ageDate = new Date(ageDifMs); // miliseconds from epoch
-    return Math.abs(ageDate.getUTCFullYear() - 1970);
+  function calculateAge(date): number {
+    const birthday = +new Date(date);
+    return ~~((Date.now() - birthday) / (31557600000));
   }
 
   return (
@@ -157,7 +153,7 @@ const ShowActor: FunctionalComponent<{ id: number }> = ({ id }) => {
                 {credit.release_year}
                 <strong>
                   <a href={credit.linkToPage} className="hover:underline">
-                    {credit.title}
+                    {credit.title || credit.original_name}
                   </a>
                 </strong>{" "}
                 as {credit.character}
