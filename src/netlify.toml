@@ -5,3 +5,5 @@
     X-Frame-Options = "SAMEORIGIN"
     Referrer-Policy = "no-referrer"
     X-XSS-Protection = "1; mode=block"
+    Feature-Policy =  "microphone 'none'; geolocation 'none'"
+    Content-Security-Policy =  "script-src 'self'"
