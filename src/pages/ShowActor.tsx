@@ -4,22 +4,22 @@ import tmdbApi from "../services/tmdbapi";
 import { Actor } from "../interfaces/ActorInterface";
 import config from "../../environment";
 
-const ShowActor: FunctionalComponent<{ id: number }> = ({ id }: {id}) => {
+const ShowActor: FunctionalComponent<{ id: number }> = ({ id }: {id: number}) => {
   const [actor, setActor] = useState<Actor | null>(null);
   const [social, setSocial] = useState(null);
   const [credits, setCredits] = useState(null);
 
   useEffect(() => {
-    const loadActor = async (): void => {
+    const loadActor = async (): Promise<void> => {
       const [actorRes, socialRes, creditsRes] = await Promise.all([
         tmdbApi.get(`/person/${id}`),
         tmdbApi.get(`/person/${id}/external_ids`),
         tmdbApi.get(`/person/${id}/combined_credits`),
       ]);
       console.log(actorRes);
-      setActor(actorRes.data);
-      setSocial(socialRes.data);
-      setCredits(creditsRes.data);
+      setActor(actorRes);
+      setSocial(socialRes);
+      setCredits(creditsRes);
     };
     loadActor();
   }, []);

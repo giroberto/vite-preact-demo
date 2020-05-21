@@ -7,10 +7,10 @@ import './styles.css'
 import ShowActors from "./src/pages/ShowActors";
 import ShowActor from "./src/pages/ShowActor";
 
-const App = () => {
-  let currentUrl: string;
-  const handleRoute = (e: RouterOnChangeArgs) => {
-    currentUrl = e.url;
+const App = (): Element => {
+  let currentUrl= "/";
+  const handleRoute = (e: RouterOnChangeArgs): string => {
+    return currentUrl = e.url;
   };
 
   return (
